@@ -1,0 +1,13 @@
+{
+  "services": {
+    "service-name-1": "v1.0.0",
+    "service-name-2": "v2.1.0"
+  },
+  "files_to_update": [
+    {
+      "file": "path/to/config.json",
+      "field": "versions",
+      "match_strategy": "exact"
+    }
+  ]
+}
