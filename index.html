@@ -5,109 +5,168 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Rahul Bhalla — PM · GenAI Security · DevSecOps · Policy as Code</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --bg:#05091a;--bg2:#080e22;--bg3:#0c1530;
-  --ibm:#1F70C1;--ibml:#4A9EE8;
-  --gold:#E8A020;
-  --cyan:#00D4FF;
-  --green:#00C896;
-  --purple:#9966FF;
-  --red:#FF4757;
-  --txt:#E8EDF5;--txt2:#7A8BAA;--txt3:#3D5070;
-  --bd:rgba(31,112,193,.18);--bdg:rgba(232,160,32,.22);
+  --bg:#ffffff;
+  --bg2:#f8f9fb;
+  --bg3:#f0f2f6;
+  --ibm:#1F70C1;
+  --ibml:#1558A0;
+  --ibmlt:#e8f0fb;
+  --gold:#C8820A;
+  --goldlt:#fdf3e0;
+  --cyan:#0095C8;
+  --green:#0A8F6A;
+  --greenlt:#e2f5f0;
+  --purple:#6B48C8;
+  --purplelt:#f0ecfc;
+  --red:#D43F3F;
+  --txt:#0D1117;
+  --txt2:#374151;
+  --txt3:#6B7280;
+  --txt4:#9CA3AF;
+  --bd:#E5E7EB;
+  --bdd:#D1D5DB;
+  --shadow:0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.05);
+  --shadow-md:0 4px 16px rgba(0,0,0,.08), 0 2px 4px rgba(0,0,0,.05);
 }
 html{scroll-behavior:smooth}
 body{font-family:"DM Sans",sans-serif;background:var(--bg);color:var(--txt);line-height:1.6;overflow-x:hidden}
 
 /* ── PAGE SHELL ── */
-.page{max-width:900px;margin:0 auto;padding:52px 48px}
-
-/* ── PAGE BREAK SIMULATION ── */
-.page-break{width:100%;height:1px;background:rgba(31,112,193,.12);margin:0}
+.page{max-width:960px;margin:0 auto}
 
 /* ─────────────────────────────
    PAGE 1: WHO AM I
 ───────────────────────────── */
 #page1{
   min-height:100vh;
-  display:flex;flex-direction:column;justify-content:space-between;
-  border-bottom:1px solid var(--bd);
-  background:
-    radial-gradient(ellipse 600px 400px at 80% 20%, rgba(31,112,193,.06) 0%, transparent 70%),
-    radial-gradient(ellipse 400px 300px at 10% 80%, rgba(232,160,32,.04) 0%, transparent 70%),
-    var(--bg);
-  position:relative;
-  overflow:hidden;
+  display:flex;flex-direction:column;
+  border-bottom:2px solid var(--bd);
+  background:var(--bg);
+  position:relative;overflow:hidden;
 }
+
+/* decorative watermark */
 #page1::before{
   content:"RB";
-  position:absolute;right:-20px;top:-40px;
-  font-family:"Bebas Neue",sans-serif;font-size:320px;line-height:.85;
-  color:rgba(31,112,193,.028);pointer-events:none;letter-spacing:-10px;
+  position:absolute;right:-30px;top:-60px;
+  font-family:"Bebas Neue",sans-serif;font-size:380px;line-height:.85;
+  color:rgba(31,112,193,.04);pointer-events:none;letter-spacing:-10px;user-select:none;
 }
 
 /* Header strip */
-.p1-header{display:flex;align-items:center;justify-content:space-between;padding:44px 48px 0;position:relative;z-index:2}
-.p1-logo{font-family:"Bebas Neue",sans-serif;font-size:22px;letter-spacing:4px;color:var(--ibml)}
+.p1-header{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:32px 52px;
+  border-bottom:1px solid var(--bd);
+  position:relative;z-index:2;
+  background:var(--bg);
+}
+.p1-logo{font-family:"Bebas Neue",sans-serif;font-size:22px;letter-spacing:5px;color:var(--ibm)}
 .p1-logo span{color:var(--gold)}
 .p1-contact{display:flex;gap:20px;align-items:center}
-.p1-contact a{font-family:"JetBrains Mono",monospace;font-size:9.5px;color:var(--txt2);text-decoration:none;letter-spacing:1.5px;text-transform:uppercase;transition:color .25s}
-.p1-contact a:hover{color:var(--ibml)}
-.p1-contact .sep{width:1px;height:14px;background:var(--txt3)}
+.p1-contact a{
+  font-family:"JetBrains Mono",monospace;font-size:9.5px;color:var(--txt3);
+  text-decoration:none;letter-spacing:1.5px;text-transform:uppercase;transition:color .2s;
+}
+.p1-contact a:hover{color:var(--ibm)}
+.p1-contact .sep{width:1px;height:14px;background:var(--bd)}
 
 /* Hero content */
-.p1-hero{padding:48px 48px 0;position:relative;z-index:2;flex:1;display:flex;align-items:flex-start;gap:52px}
+.p1-hero{
+  padding:52px 52px 0;
+  position:relative;z-index:2;flex:1;
+  display:flex;align-items:flex-start;gap:56px;
+}
 .p1-left{flex:1}
-.p1-eyebrow{font-family:"JetBrains Mono",monospace;font-size:10px;color:var(--ibm);letter-spacing:3px;text-transform:uppercase;margin-bottom:16px;display:flex;align-items:center;gap:10px}
-.p1-eyebrow::before{content:"";display:inline-block;width:22px;height:1px;background:var(--ibm)}
-.p1-name{font-family:"Bebas Neue",sans-serif;font-size:clamp(72px,9vw,104px);line-height:.86;letter-spacing:3px;margin-bottom:14px}
-.p1-name .l2{color:var(--ibml)}
-.p1-role{font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--gold);letter-spacing:2px;margin-bottom:26px;padding:6px 14px;border:1px solid var(--bdg);background:rgba(232,160,32,.06);display:inline-block}
-.p1-bio{font-size:15px;color:var(--txt2);line-height:1.9;margin-bottom:32px;max-width:480px}
-.p1-bio strong{color:var(--txt);font-weight:500}
+.p1-eyebrow{
+  font-family:"JetBrains Mono",monospace;font-size:10px;color:var(--ibm);
+  letter-spacing:3px;text-transform:uppercase;margin-bottom:16px;
+  display:flex;align-items:center;gap:10px;
+}
+.p1-eyebrow::before{content:"";display:inline-block;width:24px;height:2px;background:var(--ibm)}
+.p1-name{
+  font-family:"Bebas Neue",sans-serif;
+  font-size:clamp(72px,9vw,108px);line-height:.86;letter-spacing:3px;
+  margin-bottom:16px;color:var(--txt);
+}
+.p1-name .l2{color:var(--ibm)}
+.p1-role{
+  font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--gold);
+  letter-spacing:2px;margin-bottom:28px;padding:7px 16px;
+  border:1.5px solid var(--gold);background:var(--goldlt);display:inline-block;
+  text-transform:uppercase;
+}
+.p1-bio{font-size:15px;color:var(--txt2);line-height:1.9;margin-bottom:20px;max-width:500px}
+.p1-bio strong{color:var(--txt);font-weight:600}
 
 /* Tags */
 .p1-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px}
-.tag{font-family:"JetBrains Mono",monospace;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;padding:4px 10px;border:1px solid var(--bd);color:var(--txt2);transition:all .25s}
-.tag:hover{border-color:var(--ibml);color:var(--ibml);background:rgba(31,112,193,.08)}
-.tag.active{border-color:rgba(31,112,193,.4);color:var(--ibml);background:rgba(31,112,193,.1)}
+.tag{
+  font-family:"JetBrains Mono",monospace;font-size:9px;letter-spacing:1.5px;
+  text-transform:uppercase;padding:5px 11px;border:1px solid var(--bd);
+  color:var(--txt3);transition:all .2s;background:var(--bg);cursor:default;
+}
+.tag:hover{border-color:var(--ibm);color:var(--ibm);background:var(--ibmlt)}
+.tag.active{border-color:var(--ibm);color:var(--ibm);background:var(--ibmlt)}
 
 /* Right column — stats */
-.p1-right{flex-shrink:0;display:flex;flex-direction:column;gap:12px;padding-top:28px}
-.stat-card{background:var(--bg2);border:1px solid var(--bd);padding:18px 22px;width:160px;position:relative;overflow:hidden;transition:border-color .3s}
-.stat-card:hover{border-color:rgba(31,112,193,.4)}
-.stat-card::before{content:"";position:absolute;top:0;left:0;width:3px;height:100%}
+.p1-right{flex-shrink:0;display:flex;flex-direction:column;gap:10px;padding-top:12px}
+.stat-card{
+  background:var(--bg);border:1px solid var(--bd);padding:20px 24px;width:168px;
+  position:relative;overflow:hidden;transition:box-shadow .25s,border-color .25s;
+  box-shadow:var(--shadow);
+}
+.stat-card:hover{border-color:var(--ibm);box-shadow:var(--shadow-md)}
+.stat-card::before{content:"";position:absolute;top:0;left:0;width:4px;height:100%}
 .stat-card.s-ibm::before{background:var(--ibm)}
 .stat-card.s-gold::before{background:var(--gold)}
 .stat-card.s-green::before{background:var(--green)}
 .stat-card.s-purple::before{background:var(--purple)}
-.stat-num{font-family:"Bebas Neue",sans-serif;font-size:40px;line-height:1;margin-bottom:2px}
-.stat-card.s-ibm .stat-num{color:var(--ibml)}
+.stat-num{font-family:"Bebas Neue",sans-serif;font-size:42px;line-height:1;margin-bottom:2px}
+.stat-card.s-ibm .stat-num{color:var(--ibm)}
 .stat-card.s-gold .stat-num{color:var(--gold)}
 .stat-card.s-green .stat-num{color:var(--green)}
 .stat-card.s-purple .stat-num{color:var(--purple)}
-.stat-lbl{font-family:"JetBrains Mono",monospace;font-size:8.5px;color:var(--txt3);letter-spacing:1.5px;text-transform:uppercase;line-height:1.4}
+.stat-lbl{font-family:"JetBrains Mono",monospace;font-size:8.5px;color:var(--txt3);letter-spacing:1.5px;text-transform:uppercase;line-height:1.5}
 
 /* Timeline strip */
-.p1-timeline{padding:36px 48px 0;position:relative;z-index:2}
-.tl-label{font-family:"JetBrains Mono",monospace;font-size:9.5px;color:var(--ibm);letter-spacing:3px;text-transform:uppercase;margin-bottom:20px;display:flex;align-items:center;gap:10px}
+.p1-timeline{padding:40px 52px 0;position:relative;z-index:2}
+.tl-label{
+  font-family:"JetBrains Mono",monospace;font-size:9.5px;color:var(--ibm);
+  letter-spacing:3px;text-transform:uppercase;margin-bottom:20px;
+  display:flex;align-items:center;gap:10px;
+}
 .tl-label::after{content:"";flex:1;height:1px;background:var(--bd)}
-.tl-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--bd)}
-.tl-item{background:var(--bg);padding:18px 22px;transition:background .3s}
-.tl-item:hover{background:var(--bg2)}
-.tl-period{font-family:"JetBrains Mono",monospace;font-size:9px;color:var(--txt3);letter-spacing:1px;text-transform:uppercase;margin-bottom:5px}
-.tl-role{font-size:13px;color:var(--txt);font-weight:500;margin-bottom:3px;line-height:1.3}
-.tl-co{font-size:12px;color:var(--ibml)}
+.tl-row{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--bd);background:var(--bd)}
+.tl-item{background:var(--bg);padding:18px 22px;transition:background .25s;gap:1px}
+.tl-item:hover{background:var(--ibmlt)}
+.tl-period{
+  font-family:"JetBrains Mono",monospace;font-size:8.5px;color:var(--ibm);
+  letter-spacing:1px;text-transform:uppercase;margin-bottom:5px;
+}
+.tl-role{font-size:12.5px;color:var(--txt);font-weight:600;margin-bottom:4px;line-height:1.35}
+.tl-co{font-size:11.5px;color:var(--txt3)}
 
 /* Bottom bar */
-.p1-footer{padding:28px 48px;margin-top:auto;display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--bd);position:relative;z-index:2}
-.p1-footer-left{font-family:"JetBrains Mono",monospace;font-size:9px;color:var(--txt3);letter-spacing:2px;text-transform:uppercase}
-.p1-footer-right{display:flex;gap:24px}
-.cert{font-family:"JetBrains Mono",monospace;font-size:9px;color:var(--txt2);letter-spacing:1px;padding:4px 9px;border:1px solid var(--bd)}
-.pgnum{font-family:"Bebas Neue",sans-serif;font-size:18px;color:var(--txt3);letter-spacing:2px;padding-left:24px;border-left:1px solid var(--bd)}
+.p1-footer{
+  padding:24px 52px;margin-top:36px;
+  display:flex;align-items:center;justify-content:space-between;
+  border-top:1px solid var(--bd);position:relative;z-index:2;background:var(--bg2);
+}
+.p1-footer-left{font-family:"JetBrains Mono",monospace;font-size:9px;color:var(--txt4);letter-spacing:2px;text-transform:uppercase}
+.p1-footer-right{display:flex;gap:10px;flex-wrap:wrap}
+.cert{
+  font-family:"JetBrains Mono",monospace;font-size:9px;color:var(--txt3);
+  letter-spacing:1px;padding:4px 10px;border:1px solid var(--bd);background:var(--bg);
+}
+.pgnum{
+  font-family:"Bebas Neue",sans-serif;font-size:20px;color:var(--bdd);
+  letter-spacing:2px;padding-left:24px;border-left:1px solid var(--bd);
+}
 
 
 /* ─────────────────────────────
@@ -116,84 +175,233 @@ body{font-family:"DM Sans",sans-serif;background:var(--bg);color:var(--txt);line
 #page2{
   min-height:100vh;
   display:flex;flex-direction:column;
-  background:
-    radial-gradient(ellipse 700px 500px at 20% 60%, rgba(0,200,150,.04) 0%, transparent 70%),
-    radial-gradient(ellipse 500px 400px at 90% 10%, rgba(31,112,193,.05) 0%, transparent 70%),
-    var(--bg2);
+  background:var(--bg2);
+  border-bottom:2px solid var(--bd);
 }
 
-.p2-header{display:flex;align-items:flex-start;justify-content:space-between;padding:44px 48px 0}
-.p2-section-label{font-family:"JetBrains Mono",monospace;font-size:9.5px;color:var(--ibm);letter-spacing:3px;text-transform:uppercase;display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.p2-header{
+  display:flex;align-items:flex-start;justify-content:space-between;
+  padding:48px 52px 0;gap:32px;
+}
+.p2-section-label{
+  font-family:"JetBrains Mono",monospace;font-size:9.5px;color:var(--ibm);
+  letter-spacing:3px;text-transform:uppercase;
+  display:flex;align-items:center;gap:10px;margin-bottom:10px;
+}
 .p2-section-label::after{content:"";width:44px;height:1px;background:var(--ibm)}
-.p2-title{font-family:"Bebas Neue",sans-serif;font-size:clamp(42px,5vw,58px);line-height:.92;letter-spacing:3px}
-.p2-title span{color:var(--ibml)}
-.p2-lede{font-size:13.5px;color:var(--txt2);line-height:1.85;max-width:340px;margin-top:12px}
-.p2-lede strong{color:var(--txt);font-weight:500}
+.p2-title{font-family:"Bebas Neue",sans-serif;font-size:clamp(42px,5vw,62px);line-height:.92;letter-spacing:3px;color:var(--txt)}
+.p2-title span{color:var(--ibm)}
+.p2-lede{font-size:13.5px;color:var(--txt2);line-height:1.85;max-width:360px;margin-top:14px;padding-top:14px;border-top:2px solid var(--ibm)}
+.p2-lede strong{color:var(--txt);font-weight:600}
 
 /* 2×2 Grid */
 .bring-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--bd);margin:32px 0 0;flex:1}
-.bc{background:var(--bg2);padding:34px 32px;position:relative;overflow:hidden;transition:background .3s;display:flex;flex-direction:column}
-.bc:hover{background:var(--bg3)}
-.bc::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;transform:scaleX(0);transform-origin:left;transition:transform .45s cubic-bezier(.4,0,.2,1)}
-.bc.ci::before{background:linear-gradient(90deg,var(--ibm),var(--cyan))}
-.bc.cg::before{background:linear-gradient(90deg,var(--gold),#ff9f43)}
-.bc.cq::before{background:linear-gradient(90deg,var(--green),var(--cyan))}
-.bc.cp::before{background:linear-gradient(90deg,var(--purple),var(--ibm))}
-.bc:hover::before{transform:scaleX(1)}
-.bc-bg-num{font-family:"Bebas Neue",sans-serif;font-size:80px;color:rgba(31,112,193,.04);position:absolute;top:4px;right:12px;line-height:1;pointer-events:none}
-.bc-header{display:flex;align-items:flex-start;gap:14px;margin-bottom:14px}
-.bc-icon{font-size:26px;flex-shrink:0;margin-top:2px}
-.bc-head-text{}
-.bc-pill{font-family:"JetBrains Mono",monospace;font-size:8.5px;letter-spacing:2px;text-transform:uppercase;margin-bottom:5px;padding:3px 8px;display:inline-block;border:1px solid}
-.bc.ci .bc-pill{color:var(--ibml);border-color:rgba(74,158,232,.3);background:rgba(31,112,193,.08)}
-.bc.cg .bc-pill{color:var(--gold);border-color:var(--bdg);background:rgba(232,160,32,.07)}
-.bc.cq .bc-pill{color:var(--green);border-color:rgba(0,200,150,.3);background:rgba(0,200,150,.07)}
-.bc.cp .bc-pill{color:var(--purple);border-color:rgba(153,102,255,.3);background:rgba(153,102,255,.08)}
-.bc-title{font-family:"Bebas Neue",sans-serif;font-size:21px;letter-spacing:1.5px;color:var(--txt);line-height:1.05}
-.bc-body{font-size:12.5px;color:var(--txt2);line-height:1.78;flex:1}
-.bc-body strong{color:var(--txt);font-weight:500}
-.bc-mets{display:flex;gap:18px;margin-top:18px;padding-top:14px;border-top:1px solid rgba(255,255,255,.05)}
-.bm .mn{font-family:"Bebas Neue",sans-serif;font-size:24px;line-height:1}
-.bc.ci .bm .mn{color:var(--ibml)}
+.bc{
+  background:var(--bg);padding:34px 32px;
+  position:relative;overflow:hidden;transition:background .25s;
+  display:flex;flex-direction:column;
+}
+.bc:hover{background:var(--ibmlt)}
+.bc::after{
+  content:"";position:absolute;bottom:0;left:0;right:0;height:3px;
+  transform:scaleX(0);transform-origin:left;
+  transition:transform .4s cubic-bezier(.4,0,.2,1);
+}
+.bc.ci::after{background:linear-gradient(90deg,var(--ibm),var(--cyan))}
+.bc.cg::after{background:linear-gradient(90deg,var(--gold),#e88a00)}
+.bc.cq::after{background:linear-gradient(90deg,var(--green),var(--cyan))}
+.bc.cp::after{background:linear-gradient(90deg,var(--purple),var(--ibm))}
+.bc:hover::after{transform:scaleX(1)}
+.bc-bg-num{
+  font-family:"Bebas Neue",sans-serif;font-size:90px;color:rgba(0,0,0,.03);
+  position:absolute;top:4px;right:16px;line-height:1;pointer-events:none;
+  user-select:none;
+}
+.bc-pill{
+  font-family:"JetBrains Mono",monospace;font-size:8.5px;letter-spacing:2px;
+  text-transform:uppercase;margin-bottom:8px;padding:4px 9px;display:inline-block;border:1px solid;
+}
+.bc.ci .bc-pill{color:var(--ibm);border-color:rgba(31,112,193,.3);background:var(--ibmlt)}
+.bc.cg .bc-pill{color:var(--gold);border-color:rgba(200,130,10,.3);background:var(--goldlt)}
+.bc.cq .bc-pill{color:var(--green);border-color:rgba(10,143,106,.3);background:var(--greenlt)}
+.bc.cp .bc-pill{color:var(--purple);border-color:rgba(107,72,200,.3);background:var(--purplelt)}
+.bc-title{font-family:"Bebas Neue",sans-serif;font-size:22px;letter-spacing:1.5px;color:var(--txt);line-height:1.1;margin-bottom:12px}
+.bc-body{font-size:12.5px;color:var(--txt2);line-height:1.8;flex:1}
+.bc-body strong{color:var(--txt);font-weight:600}
+.bc-mets{
+  display:flex;gap:20px;margin-top:18px;padding-top:14px;
+  border-top:1px solid var(--bd);
+}
+.bm .mn{font-family:"Bebas Neue",sans-serif;font-size:26px;line-height:1}
+.bc.ci .bm .mn{color:var(--ibm)}
 .bc.cg .bm .mn{color:var(--gold)}
 .bc.cq .bm .mn{color:var(--green)}
 .bc.cp .bm .mn{color:var(--purple)}
-.bm .ml{font-family:"JetBrains Mono",monospace;font-size:8px;color:var(--txt3);letter-spacing:1px;text-transform:uppercase;margin-top:2px}
+.bm .ml{font-family:"JetBrains Mono",monospace;font-size:8px;color:var(--txt4);letter-spacing:1px;text-transform:uppercase;margin-top:2px}
 
 /* skills strip at bottom of page 2 */
-.p2-skills{padding:0 0 0}
-.sk-label{font-family:"JetBrains Mono",monospace;font-size:9px;color:var(--txt3);letter-spacing:2px;text-transform:uppercase;margin:20px 48px 10px;display:flex;align-items:center;gap:10px}
+.p2-skills{padding:0}
+.sk-label{
+  font-family:"JetBrains Mono",monospace;font-size:9px;color:var(--txt3);
+  letter-spacing:2px;text-transform:uppercase;margin:24px 52px 12px;
+  display:flex;align-items:center;gap:10px;
+}
 .sk-label::after{content:"";flex:1;height:1px;background:var(--bd)}
-.sk-strip{display:flex;gap:6px;flex-wrap:wrap;padding:0 48px 28px}
-.skt{font-family:"JetBrains Mono",monospace;font-size:8.5px;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border:1px solid var(--bd);color:var(--txt3);transition:all .25s;white-space:nowrap}
-.skt:hover{border-color:var(--ibml);color:var(--ibml);background:rgba(31,112,193,.07)}
+.sk-strip{display:flex;gap:6px;flex-wrap:wrap;padding:0 52px 28px}
+.skt{
+  font-family:"JetBrains Mono",monospace;font-size:8.5px;letter-spacing:1px;
+  text-transform:uppercase;padding:5px 11px;border:1px solid var(--bd);
+  color:var(--txt3);transition:all .2s;white-space:nowrap;background:var(--bg);cursor:default;
+}
+.skt:hover{border-color:var(--ibm);color:var(--ibm);background:var(--ibmlt)}
 
-.p2-footer{padding:18px 48px;display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--bd);background:rgba(5,9,26,.5)}
-.p2-footer-mid{font-family:"JetBrains Mono",monospace;font-size:9px;color:var(--txt3);letter-spacing:1.5px;text-transform:uppercase}
+.p2-footer{
+  padding:20px 52px;display:flex;align-items:center;justify-content:space-between;
+  border-top:1px solid var(--bd);background:var(--bg);
+}
+.p2-footer-mid{font-family:"JetBrains Mono",monospace;font-size:9px;color:var(--txt4);letter-spacing:1.5px;text-transform:uppercase}
 
-/* override header layout for no-icon mode */
-.bc-header{display:block;margin-bottom:12px}
-.bc-icon{display:none}
-.bc-head-text{}
 
+/* ─────────────────────────────
+   PAGE 3: IMPACT & PROOF
+───────────────────────────── */
+#page3{
+  min-height:100vh;
+  display:flex;flex-direction:column;
+  background:var(--bg);
+  border-bottom:2px solid var(--bd);
+}
+
+.p3-header{
+  padding:48px 52px 0;
+  display:flex;align-items:flex-start;justify-content:space-between;gap:32px;
+}
+
+/* Impact cards */
+.impact-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:1px;
+  background:var(--bd);margin:32px 52px 0;
+}
+.ic{
+  background:var(--bg);padding:26px 24px;
+  border-top:3px solid transparent;transition:all .25s;
+}
+.ic:hover{background:var(--bg2)}
+.ic.ic-ibm{border-top-color:var(--ibm)}
+.ic.ic-gold{border-top-color:var(--gold)}
+.ic.ic-green{border-top-color:var(--green)}
+.ic.ic-purple{border-top-color:var(--purple)}
+.ic.ic-cyan{border-top-color:var(--cyan)}
+.ic.ic-red{border-top-color:var(--red)}
+.ic-project{
+  font-family:"JetBrains Mono",monospace;font-size:8.5px;letter-spacing:2px;
+  text-transform:uppercase;color:var(--txt4);margin-bottom:8px;
+}
+.ic-stat{font-family:"Bebas Neue",sans-serif;font-size:44px;line-height:1;margin-bottom:4px}
+.ic.ic-ibm .ic-stat{color:var(--ibm)}
+.ic.ic-gold .ic-stat{color:var(--gold)}
+.ic.ic-green .ic-stat{color:var(--green)}
+.ic.ic-purple .ic-stat{color:var(--purple)}
+.ic.ic-cyan .ic-stat{color:var(--cyan)}
+.ic.ic-red .ic-stat{color:var(--red)}
+.ic-desc{font-size:12.5px;color:var(--txt2);line-height:1.6;margin-bottom:6px}
+.ic-sub{font-family:"JetBrains Mono",monospace;font-size:8px;color:var(--txt4);letter-spacing:1px;text-transform:uppercase}
+
+/* Projects row */
+.proj-section{padding:40px 52px 0}
+.proj-label{
+  font-family:"JetBrains Mono",monospace;font-size:9.5px;color:var(--ibm);
+  letter-spacing:3px;text-transform:uppercase;margin-bottom:20px;
+  display:flex;align-items:center;gap:10px;
+}
+.proj-label::after{content:"";flex:1;height:1px;background:var(--bd)}
+.proj-list{display:flex;flex-direction:column;gap:1px;background:var(--bd);border:1px solid var(--bd)}
+.proj{
+  background:var(--bg);padding:22px 28px;
+  display:flex;align-items:flex-start;gap:24px;
+  transition:background .25s;
+}
+.proj:hover{background:var(--bg2)}
+.proj-left{flex-shrink:0;width:140px}
+.proj-tag{
+  font-family:"JetBrains Mono",monospace;font-size:8.5px;letter-spacing:1.5px;
+  text-transform:uppercase;padding:4px 10px;border:1px solid var(--bd);color:var(--ibm);
+  background:var(--ibmlt);display:inline-block;margin-bottom:6px;
+}
+.proj-period{font-family:"JetBrains Mono",monospace;font-size:8.5px;color:var(--txt4);letter-spacing:1px}
+.proj-right{flex:1}
+.proj-title{font-size:14.5px;font-weight:600;color:var(--txt);margin-bottom:6px}
+.proj-body{font-size:12.5px;color:var(--txt2);line-height:1.75}
+.proj-body strong{color:var(--txt);font-weight:600}
+.proj-chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
+.chip{
+  font-family:"JetBrains Mono",monospace;font-size:8px;letter-spacing:1px;
+  text-transform:uppercase;padding:3px 8px;border:1px solid var(--bd);color:var(--txt3);background:var(--bg);
+}
+
+/* Footer */
+.p3-footer{
+  padding:24px 52px;margin-top:auto;
+  display:flex;align-items:center;justify-content:space-between;
+  border-top:1px solid var(--bd);background:var(--bg2);
+}
+
+
+/* Photo */
+.p1-photo{
+  flex-shrink:0;width:160px;height:160px;
+  border-radius:50%;overflow:hidden;
+  border:3px solid var(--ibm);
+  box-shadow:0 4px 20px rgba(31,112,193,.18);
+  background:var(--bg3);
+  margin-bottom:12px;
+  align-self:flex-start;
+}
+.p1-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.p1-left-wrap{display:flex;flex-direction:column;align-items:flex-start;gap:0;flex:1}
 /* ── Fade-in animations ── */
-@keyframes fu{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
-@keyframes fi{from{opacity:0}to{opacity:1}}
-.a1{animation:fu .55s .1s both}
-.a2{animation:fu .55s .2s both}
-.a3{animation:fu .55s .3s both}
-.a4{animation:fu .55s .4s both}
-.a5{animation:fu .55s .5s both}
-.a6{animation:fu .55s .6s both}
-.a7{animation:fu .55s .7s both}
-.a8{animation:fu .55s .8s both}
+@keyframes fu{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.a1{animation:fu .5s .08s both}
+.a2{animation:fu .5s .16s both}
+.a3{animation:fu .5s .24s both}
+.a4{animation:fu .5s .32s both}
+.a5{animation:fu .5s .40s both}
+.a6{animation:fu .5s .48s both}
+.a7{animation:fu .5s .56s both}
+.a8{animation:fu .5s .64s both}
 
-.reveal{opacity:0;transform:translateY(22px);transition:opacity .55s ease,transform .55s ease}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .5s ease,transform .5s ease}
 .reveal.visible{opacity:1;transform:translateY(0)}
-.r1{transition-delay:.12s}.r2{transition-delay:.22s}.r3{transition-delay:.32s}.r4{transition-delay:.42s}
+.r1{transition-delay:.10s}.r2{transition-delay:.20s}.r3{transition-delay:.30s}.r4{transition-delay:.40s}
+
+/* ── Divider between pages ── */
+.pg-divider{
+  display:flex;align-items:center;gap:20px;
+  padding:20px 52px;background:var(--bg2);
+  border-top:1px solid var(--bd);border-bottom:1px solid var(--bd);
+}
+.pg-divider span{font-family:"JetBrains Mono",monospace;font-size:9px;color:var(--txt4);letter-spacing:2px;text-transform:uppercase;white-space:nowrap}
+.pg-divider::before,.pg-divider::after{content:"";flex:1;height:1px;background:var(--bd)}
+
+/* ── Responsive ── */
+@media(max-width:700px){
+  .p1-header,.p1-hero,.p1-timeline,.p1-footer,
+  .p2-header,.p3-header,.proj-section,
+  .sk-strip,.sk-label,.p2-footer,.p3-footer,
+  .pg-divider{padding-left:24px;padding-right:24px}
+  .impact-grid{margin-left:24px;margin-right:24px}
+  .p1-hero{flex-direction:column;gap:28px}
+  .tl-row{grid-template-columns:1fr 1fr}
+  .bring-grid{grid-template-columns:1fr}
+  .impact-grid{grid-template-columns:1fr 1fr}
+  .p1-contact{display:none}
+  #page1::before{display:none}
+}
 </style>
 </head>
 <body>
+
+<div class="page">
 
 <!-- ═══════════════════════════════════════
      PAGE 1 — WHO AM I
@@ -203,30 +411,35 @@ body{font-family:"DM Sans",sans-serif;background:var(--bg);color:var(--txt);line
   <div class="p1-header a1">
     <div class="p1-logo">RAHUL <span>BHALLA</span></div>
     <div class="p1-contact">
-      <a href="mailto:rahul@ibm.com">rahul@ibm.com</a>
+      <a href="mailto:rahulbhalla.3521@gmail.com">rahulbhalla.3521@gmail.com</a>
       <div class="sep"></div>
-      <a href="https://linkedin.com/in/rahulbhalla" target="_blank">LinkedIn</a>
+      <a href="https://linkedin.com/in/rahul-bhalla-05756513" target="_blank">LinkedIn</a>
       <div class="sep"></div>
-      <a href="#">IBM India · Bangalore</a>
+      <a href="https://github.com/rahulbhalla3521" target="_blank">GitHub</a>
+      <div class="sep"></div>
+      <a>+91 973 114 0419 · Bengaluru, India</a>
     </div>
   </div>
 
   <div class="p1-hero">
     <div class="p1-left">
-      <div class="p1-eyebrow a2">GenAI Security · IBM · Product Manager</div>
+<div class="p1-photo a2">
+        <img src="data:image/jpeg;base64,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" alt="Rahul Bhalla">
+      </div>
+            <div class="p1-eyebrow a2">GenAI Security · IBM · Product Manager</div>
       <div class="p1-name a3">RAHUL<br><span class="l2">BHALLA</span></div>
       <div class="p1-role a4">Product Manager · GenAI Security Architect · DevSecOps · Policy as Code</div>
       <p class="p1-bio a5">
-        <strong>Product Manager & Security Automation Leader</strong> who transformed IBM's vulnerability 
-        management from <strong>12-hour manual drudgery to 15-minute AI-powered intelligence</strong> — 
-        achieving 80% platform adoption across 15+ teams. Now architecting the next frontier: 
-        <strong>Policy as Code + GenAI-native security</strong>.
+        <strong>Product Manager & Security Automation Leader</strong> with 12+ years at IBM, 
+        transforming vulnerability management from <strong>12-hour manual drudgery to 15-minute 
+        AI-powered intelligence</strong> — achieving 80% platform adoption across 15+ teams. 
+        Now architecting the next frontier: <strong>Policy as Code + GenAI-native security</strong>.
       </p>
-      <p class="p1-bio a5" style="margin-top:-16px">
-        With <strong>11+ years at IBM</strong>, I sit at the rare intersection of deep technical fluency and 
-        enterprise-scale product leadership. I don't just manage roadmaps — I originate categories, 
-        transform engineering culture, and ship products that teams actually adopt. I operate with 
-        equal fluency in <strong>a CISO's boardroom and an SRE's sprint planning</strong>.
+      <p class="p1-bio a5" style="margin-top:-10px">
+        I sit at a rare intersection of <strong>deep technical fluency and enterprise-scale product 
+        leadership</strong>. I don't just manage roadmaps — I originate categories, transform 
+        engineering culture, and ship products teams actually adopt. I operate with equal fluency 
+        in <strong>a CISO's boardroom and an SRE's sprint planning</strong>.
       </p>
       <div class="p1-tags a6">
         <span class="tag active">watsonx.ai Granite</span>
@@ -237,8 +450,10 @@ body{font-family:"DM Sans",sans-serif;background:var(--bg);color:var(--txt);line
         <span class="tag">PSIRT Automation</span>
         <span class="tag">DevSecOps</span>
         <span class="tag">Kubernetes · CKA</span>
-        <span class="tag">ServiceNow</span>
-        <span class="tag">GDPR · SOC2 · FedRAMP · HIPAA</span>
+        <span class="tag">ServiceNow ITSM</span>
+        <span class="tag">GDPR · SOC2 · FedRAMP · HIPAA · DORA</span>
+        <span class="tag">Zero-Trust Architecture</span>
+        <span class="tag">MCP Server</span>
       </div>
     </div>
 
@@ -253,11 +468,11 @@ body{font-family:"DM Sans",sans-serif;background:var(--bg);color:var(--txt);line
       </div>
       <div class="stat-card s-green">
         <div class="stat-num">$15M+</div>
-        <div class="stat-lbl">Roadmap<br>Budget Influenced</div>
+        <div class="stat-lbl">Roadmap Budget<br>Influenced</div>
       </div>
       <div class="stat-card s-purple">
-        <div class="stat-num">11+</div>
-        <div class="stat-lbl">Years at<br>IBM</div>
+        <div class="stat-num">55%</div>
+        <div class="stat-lbl">MTTR<br>Improvement</div>
       </div>
     </div>
   </div>
@@ -271,35 +486,38 @@ body{font-family:"DM Sans",sans-serif;background:var(--bg);color:var(--txt);line
         <div class="tl-co">IBM · IaaS & Hyper Protect Crypto Services</div>
       </div>
       <div class="tl-item">
-        <div class="tl-period">2019 — 2024</div>
-        <div class="tl-role">Product Owner/Strategy and Project Lead — PSIRT Automation & AI Security</div>
-        <div class="tl-co">IBM · Cloud/OnPrem Security & Compliance</div>
+        <div class="tl-period">2023 — 2024</div>
+        <div class="tl-role">Product Strategy & Operations Manager</div>
+        <div class="tl-co">IBM · IaaS, Hyper Protect, zAIOps</div>
       </div>
       <div class="tl-item">
-        <div class="tl-period">2017 — 2018</div>
-        <div class="tl-role">Senior UX and UI Lead · DPM, IBM zFirmware</div>
-        <div class="tl-co">IBM · zFirmware, Storage</div>
+        <div class="tl-period">2020 — 2023</div>
+        <div class="tl-role">Security Automation Project Lead & PO</div>
+        <div class="tl-co">IBM · IaaS & Hyper Protect Services</div>
       </div>
       <div class="tl-item">
-        <div class="tl-period">2014 — 2016</div>
-        <div class="tl-role">Senior UX/UI Developer · Data Engineering Solutions</div>
-        <div class="tl-co">Molecular Connections Pvt. Ltd.</div>
+        <div class="tl-period">2017 — 2019</div>
+        <div class="tl-role">Senior UI/UX Lead</div>
+        <div class="tl-co">IBM · Dynamic Partition Manager, zFirmware</div>
       </div>
     </div>
   </div>
 
   <div class="p1-footer">
-    <div class="p1-footer-left">rahul.bhalla@ibm.com · Bangalore, India</div>
+    <div class="p1-footer-left">rahulbhalla.3521@gmail.com · Bengaluru, India</div>
     <div class="p1-footer-right">
-      <span class="cert">CKA</span>
+      <span class="cert">CKA (Target)</span>
       <span class="cert">IBM Design Thinking</span>
-      <span class="cert">ITIL v4</span>
-      <span class="cert">Agile PM</span>
+      <span class="cert">IBM Agile Explorer</span>
+      <span class="cert">ServiceNow CSA (Target)</span>
+      <span class="cert">AWS Security (Target)</span>
     </div>
     <div class="pgnum">01</div>
   </div>
 
 </section>
+
+<div class="pg-divider"><span>What I bring</span></div>
 
 <!-- ═══════════════════════════════════════
      PAGE 2 — WHAT I BRING TO THE TABLE
@@ -323,20 +541,18 @@ body{font-family:"DM Sans",sans-serif;background:var(--bg);color:var(--txt);line
     <!-- 01 GenAI × Security -->
     <div class="bc ci reveal r1">
       <div class="bc-bg-num">01</div>
-      <div class="bc-header">
-        <div class="bc-pill">GenAI × Security</div>
-        <div class="bc-title">LLM-Powered Vulnerability Intelligence</div>
-      </div>
+      <div class="bc-pill">GenAI × Security</div>
+      <div class="bc-title">LLM-Powered Vulnerability Intelligence</div>
       <p class="bc-body">
         I'm <strong>actively building</strong> an AI-native CVE/CWE intelligence pipeline — not a slide deck concept, but 
         a production-grade system using <strong>watsonx.ai Granite, quantized LoRA fine-tuning (7–8B models), pgvector 
-        embeddings, and MCP Server</strong>. This system transforms raw CVE feeds from Debian, MITRE, RHEL/HYDRA, and 
+        embeddings, and MCP Server</strong>. This transforms raw CVE feeds from Debian, MITRE, RHEL/HYDRA, and 
         Canonical into automated attack path classifications, vulnerability prioritisation scores, and security hotspot 
         detection — replacing hours of analyst triage with seconds of AI inference.
       </p>
       <div class="bc-mets">
         <div class="bm"><div class="mn">7–8B</div><div class="ml">Model Scale</div></div>
-        <div class="bm"><div class="mn">3-Phase</div><div class="ml">MVP Roadmap</div></div>
+        <div class="bm"><div class="mn">70%</div><div class="ml">Triage Reduction</div></div>
         <div class="bm"><div class="mn">4 APIs</div><div class="ml">CVE Sources</div></div>
       </div>
     </div>
@@ -344,16 +560,14 @@ body{font-family:"DM Sans",sans-serif;background:var(--bg);color:var(--txt);line
     <!-- 02 Platform · Adoption -->
     <div class="bc cg reveal r2">
       <div class="bc-bg-num">02</div>
-      <div class="bc-header">
-        <div class="bc-pill">Platform · Adoption</div>
-        <div class="bc-title">Integration-Ready Products That Teams Actually Use</div>
-      </div>
+      <div class="bc-pill">Platform · Adoption</div>
+      <div class="bc-title">Integration-Ready Products That Teams Actually Use</div>
       <p class="bc-body">
         I don't just build features — I build <strong>integration-ready solutions</strong> that plug into existing 
         developer workflows without friction. My PSIRT Automation Platform was designed from day one to integrate with 
         <strong>Jenkins, ServiceNow, JIRA, Slack, and GitHub Actions</strong> — meaning teams onboarded in days, not 
-        months. This user-centric, zero-disruption approach is why I achieved <strong>80% adoption across IBM product 
-        lines</strong> — a benchmark most internal platforms never reach.
+        months. This user-centric, zero-disruption approach is why I achieved <strong>80% adoption across 15+ IBM 
+        product lines</strong> — a benchmark most internal platforms never reach.
       </p>
       <div class="bc-mets">
         <div class="bm"><div class="mn">80%</div><div class="ml">Adoption Rate</div></div>
@@ -365,16 +579,15 @@ body{font-family:"DM Sans",sans-serif;background:var(--bg);color:var(--txt);line
     <!-- 03 Strategy · Vision -->
     <div class="bc cq reveal r3">
       <div class="bc-bg-num">03</div>
-      <div class="bc-header">
-        <div class="bc-pill">Strategy · Vision</div>
-        <div class="bc-title">Policy as Code — The Future I'm Architecting</div>
-      </div>
+      <div class="bc-pill">Strategy · Vision</div>
+      <div class="bc-title">Policy as Code — The Future I'm Architecting</div>
       <p class="bc-body">
-        My north star vision: <strong>compliance, governance, and security policies should live in version-controlled 
-        code repositories</strong> — not PDF documents, not spreadsheets, not email threads. I am building toward a 
-        world where every GDPR clause, SOC2 control, FedRAMP requirement, and HIPAA safeguard is expressed as 
-        <strong>machine-executable, auditable, CI/CD-native policy</strong> — validated at commit time, enforced at 
-        deploy time, reported at audit time. Automatically.
+        My north star: <strong>compliance, governance, and security policies should live in version-controlled 
+        code repositories</strong> — not PDF documents or email threads. I am building toward a world where every 
+        GDPR clause, SOC2 control, FedRAMP requirement, and HIPAA safeguard is expressed as 
+        <strong>machine-executable, auditable, CI/CD-native policy</strong> — validated at commit time, 
+        enforced at deploy time, reported at audit time. Automatically. 
+        Zero-Trust architecture roadmap targeting a <strong>40% reduction in audit preparation time</strong>.
       </p>
       <div class="bc-mets">
         <div class="bm"><div class="mn">6</div><div class="ml">Frameworks</div></div>
@@ -386,20 +599,18 @@ body{font-family:"DM Sans",sans-serif;background:var(--bg);color:var(--txt);line
     <!-- 04 PM · Execution -->
     <div class="bc cp reveal r4">
       <div class="bc-bg-num">04</div>
-      <div class="bc-header">
-        <div class="bc-pill">PM · Execution</div>
-        <div class="bc-title">$15M+ Roadmaps · C-Suite Narratives · Zero Fluff</div>
-      </div>
+      <div class="bc-pill">PM · Execution</div>
+      <div class="bc-title">$15M+ Roadmaps · C-Suite Narratives · Zero Fluff</div>
       <p class="bc-body">
         I translate <strong>regulatory complexity into business strategy</strong> and business strategy into 
-        engineering backlogs. I've authored executive investment roadmaps informing $15M+ in budget decisions, 
-        synthesising voice-of-customer from 10+ enterprise accounts with GDPR, SOC2, FedRAMP, HIPAA, and DORA 
-        requirements. I operate with equal fluency in <strong>a CISO's boardroom and an SRE's sprint planning</strong> 
-        — bridging the gap that most PMs can't cross.
+        engineering backlogs. I've authored executive investment roadmaps informing <strong>$15M+ in budget decisions</strong>, 
+        synthesising voice-of-customer from <strong>45+ discovery sessions</strong> with enterprise accounts 
+        alongside GDPR, SOC2, FedRAMP, HIPAA, and DORA requirements. I operate with equal fluency in 
+        a CISO's boardroom and an SRE's sprint planning — bridging the gap that most PMs can't cross.
       </p>
       <div class="bc-mets">
         <div class="bm"><div class="mn">$15M+</div><div class="ml">Budget Influence</div></div>
-        <div class="bm"><div class="mn">45+</div><div class="ml">Stakeholders</div></div>
+        <div class="bm"><div class="mn">45+</div><div class="ml">Discovery Sessions</div></div>
         <div class="bm"><div class="mn">5+</div><div class="ml">Regulations</div></div>
       </div>
     </div>
@@ -419,31 +630,196 @@ body{font-family:"DM Sans",sans-serif;background:var(--bg);color:var(--txt);line
       <span class="skt">GitHub Actions</span>
       <span class="skt">Kubernetes (CKA)</span>
       <span class="skt">Terraform / IaC</span>
-      <span class="skt">ServiceNow</span>
+      <span class="skt">ServiceNow ITSM</span>
       <span class="skt">PSIRT Automation</span>
       <span class="skt">SAST / DAST</span>
       <span class="skt">CVE / CWE Triage</span>
-      <span class="skt">Aha! · JIRA</span>
+      <span class="skt">Aha! · JIRA · Confluence</span>
+      <span class="skt">CVSS · EPSS Prioritization</span>
       <span class="skt">GDPR · SOC2 · FedRAMP · HIPAA · DORA</span>
+      <span class="skt">Zero-Trust (NIST SP 800-207)</span>
     </div>
   </div>
 
   <div class="p2-footer reveal">
-    <div style="font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--txt3);letter-spacing:2px;text-transform:uppercase">Rahul Bhalla</div>
-    <div class="p2-footer-mid">rahul.bhalla@ibm.com · linkedin.com/in/rahulbhalla</div>
+    <div style="font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--txt4);letter-spacing:2px;text-transform:uppercase">Rahul Bhalla</div>
+    <div class="p2-footer-mid">rahulbhalla.3521@gmail.com · linkedin.com/in/rahul-bhalla-05756513</div>
     <div class="pgnum">02</div>
   </div>
 
 </section>
 
-<script>
-// Scroll reveal
-const revEls = document.querySelectorAll(".reveal");
-const obs = new IntersectionObserver(entries => {
-  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add("visible"); });
-}, { threshold: 0.08 });
-revEls.forEach(e => obs.observe(e));
-</script>
+<div class="pg-divider"><span>Impact & proof of work</span></div>
 
+<!-- ═══════════════════════════════════════
+     PAGE 3 — IMPACT METRICS & PROJECTS
+═══════════════════════════════════════ -->
+<section id="page3">
+
+  <div class="p3-header">
+    <div>
+      <div class="p2-section-label reveal">02 — Proof of Work</div>
+      <div class="p2-title reveal r1">IMPACT <span>METRICS</span><br>& KEY PROJECTS</div>
+    </div>
+    <div class="p2-lede reveal r2">
+      Every number below is <strong>sourced from production systems</strong>, not decks. 
+      Real adoption, real reduction, real dollars. Built at IBM over 
+      <strong>12 years across IaaS, Hyper Protect, zAIOps, and GenAI Security</strong>.
+    </div>
+  </div>
+
+  <div class="impact-grid">
+    <div class="ic ic-ibm reveal r1">
+      <div class="ic-project">PSIRT Automation</div>
+      <div class="ic-stat">98%</div>
+      <div class="ic-desc">Scan time reduction via CI/CD security pipelines</div>
+      <div class="ic-sub">4 hrs → 5 mins</div>
+    </div>
+    <div class="ic ic-gold reveal r2">
+      <div class="ic-project">Platform Adoption</div>
+      <div class="ic-stat">80%</div>
+      <div class="ic-desc">Teams actively using PSIRT platform across 12 products</div>
+      <div class="ic-sub">15+ teams · IBM-wide</div>
+    </div>
+    <div class="ic ic-green reveal r3">
+      <div class="ic-project">MTTR Improvement</div>
+      <div class="ic-stat">55%</div>
+      <div class="ic-desc">Incident response time improvement via ITSM integration</div>
+      <div class="ic-sub">ServiceNow + JIRA + Slack</div>
+    </div>
+    <div class="ic ic-purple reveal r1">
+      <div class="ic-project">Onboarding Velocity</div>
+      <div class="ic-stat">95%</div>
+      <div class="ic-desc">Faster team onboarding with reusable framework design</div>
+      <div class="ic-sub">8 weeks → 3 days</div>
+    </div>
+    <div class="ic ic-cyan reveal r2">
+      <div class="ic-project">Compliance Audits</div>
+      <div class="ic-stat">60%</div>
+      <div class="ic-desc">Faster compliance audit cycles with automated gates</div>
+      <div class="ic-sub">120 eng hrs/qtr saved</div>
+    </div>
+    <div class="ic ic-gold reveal r3">
+      <div class="ic-project">Cost Savings</div>
+      <div class="ic-stat">$40K</div>
+      <div class="ic-desc">Delivered via automated asset inventory & reuse framework</div>
+      <div class="ic-sub">Vendor SLA renegotiation</div>
+    </div>
+  </div>
+
+  <div class="proj-section">
+    <div class="proj-label reveal">Signature Projects</div>
+    <div class="proj-list">
+
+      <div class="proj reveal r1">
+        <div class="proj-left">
+          <div class="proj-tag">GenAI · Security</div>
+          <div class="proj-period">2023 – Present</div>
+        </div>
+        <div class="proj-right">
+          <div class="proj-title">AI/ML CVE Intelligence Pipeline — watsonx.ai + pgvector + MCP Server</div>
+          <p class="proj-body">
+            Architected a multi-phase AI/ML vulnerability intelligence pipeline using <strong>watsonx.ai Granite, 
+            LoRA fine-tuning (7–8B models), pgvector, and MCP Server</strong>. Ingests live CVE/CWE feeds 
+            from Debian, MITRE, RHEL/HYDRA, and Canonical — enabling automated attack path classification, 
+            vulnerability prioritisation scoring, and security hotspot detection. Replaces hours of analyst 
+            triage with seconds of AI inference. <strong>70% reduction in manual triage time.</strong>
+          </p>
+          <div class="proj-chips">
+            <span class="chip">watsonx.ai</span><span class="chip">LoRA Fine-Tuning</span>
+            <span class="chip">pgvector</span><span class="chip">RAG</span>
+            <span class="chip">MCP Server</span><span class="chip">CVE/CWE</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj reveal r2">
+        <div class="proj-left">
+          <div class="proj-tag">DevSecOps</div>
+          <div class="proj-period">2020 – 2023</div>
+        </div>
+        <div class="proj-right">
+          <div class="proj-title">IBM PSIRT Security Automation Platform — End-to-End Product Ownership</div>
+          <p class="proj-body">
+            Originated and owned IBM's PSIRT Security Automation Platform from <strong>ideation through scaled 
+            adoption</strong> — 45+ stakeholder discovery interviews, Jenkins-driven CI/CD security pipelines, 
+            ITSM-connected DevSecOps toolchain (ServiceNow, JIRA, Slack). Achieved <strong>80% adoption across 
+            15+ teams</strong>, 98% scan time reduction (4 hrs → 5 mins), 40% increase in CVE detection, 
+            and 55% MTTR improvement across 12 IBM products.
+          </p>
+          <div class="proj-chips">
+            <span class="chip">Jenkins</span><span class="chip">ServiceNow</span>
+            <span class="chip">GitHub Actions</span><span class="chip">SAST/DAST</span>
+            <span class="chip">FIPS 140-2</span><span class="chip">Ubuntu/RHEL/SUSE</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj reveal r3">
+        <div class="proj-left">
+          <div class="proj-tag">Product Strategy</div>
+          <div class="proj-period">2023 – 2024</div>
+        </div>
+        <div class="proj-right">
+          <div class="proj-title">$15M+ Cross-Portfolio Investment Roadmap — IaaS, Hyper Protect, zAIOps</div>
+          <p class="proj-body">
+            Owned cross-portfolio product strategy for IBM's enterprise security and cloud platforms. 
+            Authored <strong>executive investment roadmaps and SWOT analyses informing $15M+ budget decisions</strong> 
+            across cloud AI, DevSecOps, and security compliance domains. Synthesised regulatory requirements 
+            (GDPR, SOC2, FedRAMP, HIPAA, DORA) with voice-of-customer insights from 10+ enterprise accounts. 
+            Defined zero-trust security architecture roadmap targeting 40% reduction in audit preparation time.
+          </p>
+          <div class="proj-chips">
+            <span class="chip">Aha!</span><span class="chip">Zero-Trust</span>
+            <span class="chip">GDPR/SOC2/FedRAMP</span><span class="chip">Tableau</span>
+            <span class="chip">Executive Roadmaps</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj reveal r4">
+        <div class="proj-left">
+          <div class="proj-tag">Release Mgmt</div>
+          <div class="proj-period">2024 – Present</div>
+        </div>
+        <div class="proj-right">
+          <div class="proj-title">5+ Quarterly Release Orchestration — IaaS & Hyper Protect Crypto Services</div>
+          <p class="proj-body">
+            Orchestrated 5+ quarterly product releases across infrastructure, firmware, and SaaS product lines. 
+            Automated release governance workflows using JIRA and Aha!, <strong>reducing team onboarding time 
+            by 20%</strong> and compressing compliance review cycles from 5 days to 3 days. Reduced 
+            compliance-related defects by 25% and post-release production defects by 28% via quality gates, 
+            automated testing pipelines, and structured sprint retrospectives.
+          </p>
+          <div class="proj-chips">
+            <span class="chip">JIRA</span><span class="chip">Aha!</span>
+            <span class="chip">CI/CD Gates</span><span class="chip">Risk Registers</span>
+            <span class="chip">C-Suite Dashboards</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="p3-footer reveal">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--txt4);letter-spacing:2px;text-transform:uppercase">Rahul Bhalla · rahulbhalla3521.github.io</div>
+    <div style="font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--txt4);letter-spacing:1.5px;text-transform:uppercase">M.Sc. Bioinformatics — IBAB/IGNOU · B.Sc. Biotechnology — Amity University</div>
+    <div class="pgnum">03</div>
+  </div>
+
+</section>
+
+</div><!-- .page -->
+
+<script>
+// Reveal on scroll
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); }
+  });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
 </body>
 </html>
