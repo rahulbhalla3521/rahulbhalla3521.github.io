@@ -221,10 +221,10 @@ body{font-family:"DM Sans",sans-serif;background:var(--bg);color:var(--txt);line
   font-family:"JetBrains Mono",monospace;font-size:8.5px;letter-spacing:2px;
   text-transform:uppercase;margin-bottom:8px;padding:4px 9px;display:inline-block;border:1px solid;
 }
-.bc.ci .bc-pill{color:var(--ibm);border-color:rgba(31,112,193,.3);background:var(--ibmlt)}
-.bc.cg .bc-pill{color:var(--gold);border-color:rgba(200,130,10,.3);background:var(--goldlt)}
-.bc.cq .bc-pill{color:var(--green);border-color:rgba(10,143,106,.3);background:var(--greenlt)}
-.bc.cp .bc-pill{color:var(--purple);border-color:rgba(107,72,200,.3);background:var(--purplelt)}
+.bc.ci .bc-pill{color:var(--ibm);border-color:rgba(31,112,193,.3);background:var(--ibmlt);font-family:"IBM Plex Sans",condensed;font-size:11px}
+.bc.cg .bc-pill{color:var(--gold);border-color:rgba(200,130,10,.3);background:var(--goldlt);font-family:"IBM Plex Sans",condensed;font-size:11px}
+.bc.cq .bc-pill{color:var(--green);border-color:rgba(10,143,106,.3);background:var(--greenlt);font-family:"IBM Plex Sans",condensed;font-size:11px}
+.bc.cp .bc-pill{color:var(--purple);border-color:rgba(107,72,200,.3);background:var(--purplelt);font-family:"IBM Plex Sans",condensed;font-size:11px}
 .bc-title{font-family:"Bebas Neue",sans-serif;font-size:22px;letter-spacing:1.5px;color:var(--txt);line-height:1.1;margin-bottom:12px}
 .bc-body{font-size:12.5px;color:var(--txt2);line-height:1.8;flex:1}
 .bc-body strong{color:var(--txt);font-weight:600}
@@ -242,14 +242,14 @@ body{font-family:"DM Sans",sans-serif;background:var(--bg);color:var(--txt);line
 /* skills strip at bottom of page 2 */
 .p2-skills{padding:0}
 .sk-label{
-  font-family:"JetBrains Mono",monospace;font-size:9px;color:var(--txt3);
+  font-family:"IBM Plex Sans",monospace;font-size:11px;color:var(--txt3);
   letter-spacing:2px;text-transform:uppercase;margin:24px 52px 12px;
   display:flex;align-items:center;gap:10px;
 }
 .sk-label::after{content:"";flex:1;height:1px;background:var(--bd)}
 .sk-strip{display:flex;gap:6px;flex-wrap:wrap;padding:0 52px 28px}
 .skt{
-  font-family:"JetBrains Mono",monospace;font-size:8.5px;letter-spacing:1px;
+  font-family:"IBM Plex Sans",monospace;font-size:10.5px;letter-spacing:1px;
   text-transform:uppercase;padding:5px 11px;border:1px solid var(--bd);
   color:var(--txt3);transition:all .2s;white-space:nowrap;background:var(--bg);cursor:default;
 }
@@ -324,7 +324,7 @@ body{font-family:"DM Sans",sans-serif;background:var(--bg);color:var(--txt);line
 .proj:hover{background:var(--bg2)}
 .proj-left{flex-shrink:0;width:140px}
 .proj-tag{
-  font-family:"JetBrains Mono",monospace;font-size:8.5px;letter-spacing:1.5px;
+  font-family:"IBM Plex Sans",monospace;font-size:9.5px;letter-spacing:1.5px; font-style: bold;
   text-transform:uppercase;padding:4px 10px;border:1px solid var(--bd);color:var(--ibm);
   background:var(--ibmlt);display:inline-block;margin-bottom:6px;
 }
@@ -341,9 +341,24 @@ body{font-family:"DM Sans",sans-serif;background:var(--bg);color:var(--txt);line
 
 /* Footer */
 .p3-footer{
-  padding:24px 52px;margin-top:auto;
-  display:flex;align-items:center;justify-content:space-between;
+  padding:20px 52px;margin-top:auto;
+  display:flex;align-items:center;justify-content:space-between;gap:32px;
   border-top:1px solid var(--bd);background:var(--bg2);
+}
+.p3-edu{
+  display:flex;align-items:center;gap:14px;
+  border-left:2px solid var(--ibm);padding-left:14px;
+}
+.p3-edu-label{
+  font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:2px;
+  text-transform:uppercase;color:var(--ibm);font-weight:500;white-space:nowrap;
+}
+.p3-edu-degrees{
+  display:flex;flex-direction:column;gap:2px;
+}
+.p3-edu-degree{
+  font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--txt2);
+  letter-spacing:.8px;line-height:1.4;
 }
 
 
@@ -435,12 +450,6 @@ body{font-family:"DM Sans",sans-serif;background:var(--bg);color:var(--txt);line
         AI-powered intelligence</strong> — achieving 80% platform adoption across 15+ teams. 
         Now architecting the next frontier: <strong>Policy as Code + GenAI-native security</strong>.
       </p>
-      <p class="p1-bio a5" style="margin-top:-10px">
-        I sit at a rare intersection of <strong>deep technical fluency and enterprise-scale product 
-        leadership</strong>. I don't just manage roadmaps — I originate categories, transform 
-        engineering culture, and ship products teams actually adopt. I operate with equal fluency 
-        in <strong>a CISO's boardroom and an SRE's sprint planning</strong>.
-      </p>
       <div class="p1-tags a6">
         <span class="tag active">watsonx.ai Granite</span>
         <span class="tag active">LoRA Fine-Tuning</span>
@@ -503,14 +512,16 @@ body{font-family:"DM Sans",sans-serif;background:var(--bg);color:var(--txt);line
     </div>
   </div>
 
-  <div class="p1-footer">
-    <div class="p1-footer-left">rahulbhalla.3521@gmail.com · Bengaluru, India</div>
-    <div class="p1-footer-right">
-      <span class="cert">CKA (Target)</span>
-      <span class="cert">IBM Design Thinking</span>
-      <span class="cert">IBM Agile Explorer</span>
-      <span class="cert">ServiceNow CSA (Target)</span>
-      <span class="cert">AWS Security (Target)</span>
+  <div class="p3-footer reveal">
+    <div class="p3-edu">
+      <div class="p3-edu-label">Certifications</div>
+      <div class="proj-chips">
+      <span class="proj-tag">CKA (Target)</span>
+      <span class="proj-tag">IBM Design Thinking</span>
+      <span class="proj-tag">IBM Agile Explorer</span>
+      <span class="proj-tag">ServiceNow CSA (Target)</span>
+      <span class="proj-tag">AWS Security (Target)</span>
+      </div>
     </div>
     <div class="pgnum">01</div>
   </div>
@@ -530,7 +541,7 @@ body{font-family:"DM Sans",sans-serif;background:var(--bg);color:var(--txt);line
       <div class="p2-title reveal r1">WHAT I <span>BRING</span><br>TO THE TABLE</div>
     </div>
     <div class="p2-lede reveal r2">
-      I sit at a rare intersection: <strong>deep technical fluency + strategic product thinking + enterprise-scale execution</strong>. 
+      I sit at a rare intersection: <strong>deep technical fluency + strategic product thinking + enterprise-scale execution + operational excellence</strong>. 
       I don't just manage roadmaps — I originate categories, transform engineering culture, and ship products that 
       teams actually adopt and love.
     </div>
@@ -640,13 +651,6 @@ body{font-family:"DM Sans",sans-serif;background:var(--bg);color:var(--txt);line
       <span class="skt">Zero-Trust (NIST SP 800-207)</span>
     </div>
   </div>
-
-  <div class="p2-footer reveal">
-    <div style="font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--txt4);letter-spacing:2px;text-transform:uppercase">Rahul Bhalla</div>
-    <div class="p2-footer-mid">rahulbhalla.3521@gmail.com · linkedin.com/in/rahul-bhalla-05756513</div>
-    <div class="pgnum">02</div>
-  </div>
-
 </section>
 
 <div class="pg-divider"><span>Impact & proof of work</span></div>
@@ -803,8 +807,13 @@ body{font-family:"DM Sans",sans-serif;background:var(--bg);color:var(--txt);line
   </div>
 
   <div class="p3-footer reveal">
-    <div style="font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--txt4);letter-spacing:2px;text-transform:uppercase">Rahul Bhalla · rahulbhalla3521.github.io</div>
-    <div style="font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--txt4);letter-spacing:1.5px;text-transform:uppercase">M.Sc. Bioinformatics — IBAB/IGNOU · B.Sc. Biotechnology — Amity University</div>
+    <div class="p3-edu">
+      <div class="p3-edu-label">Education</div>
+      <div class="p3-edu-degrees">
+        <div class="p3-edu-degree">M.Sc. Bioinformatics &mdash; IBAB / IGNOU</div>
+        <div class="p3-edu-degree">B.Sc. Biotechnology &mdash; Amity University</div>
+      </div>
+    </div>
     <div class="pgnum">03</div>
   </div>
 
